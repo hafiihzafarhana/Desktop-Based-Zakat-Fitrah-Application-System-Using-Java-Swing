@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="69"/>
+	<parameter name="no" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="id_muz" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     muzaki.`jumlah_jiwa` AS muzaki_jumlah_jiwa,
+     muzaki.`nama_muzaki` AS muzaki_nama_muzaki,
+     muzaki.`id_muzaki` AS muzaki_id_muzaki,
+     muzaki.`jumlah_zakat_beras` AS muzaki_jumlah_zakat_beras,
+     muzaki.`jumlah_zakat_uang` AS muzaki_jumlah_zakat_uang,
+     muzaki.`tgl_update` AS muzaki_tgl_update,
+     muzaki.`shodaqoh` AS muzaki_shodaqoh,
+     muzaki.`subTotal` AS muzaki_subTotal,
+     muzaki.`pembayaran` AS muzaki_pembayaran,
+     muzaki.`kembalian` AS muzaki_kembalian,
+     muzaki.`nik` AS muzaki_nik,
+     muzaki.`tgl_tambah` AS muzaki_tgl_tambah
+FROM
+     `muzaki` muzaki
+WHERE
+     id_muzaki = $P{id_muz}]]>
+	</queryString>
+	<field name="muzaki_jumlah_jiwa" class="java.lang.Integer"/>
+	<field name="muzaki_nama_muzaki" class="java.lang.String"/>
+	<field name="muzaki_id_muzaki" class="java.lang.Integer"/>
+	<field name="muzaki_jumlah_zakat_beras" class="java.lang.Integer"/>
+	<field name="muzaki_jumlah_zakat_uang" class="java.lang.Integer"/>
+	<field name="muzaki_tgl_update" class="java.lang.String"/>
+	<field name="muzaki_shodaqoh" class="java.lang.Integer"/>
+	<field name="muzaki_subTotal" class="java.lang.Integer"/>
+	<field name="muzaki_pembayaran" class="java.lang.Integer"/>
+	<field name="muzaki_kembalian" class="java.lang.Integer"/>
+	<field name="muzaki_nik" class="java.lang.String"/>
+	<field name="muzaki_tgl_tambah" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="107" y="0" width="339" height="79"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kwitansi Muzaki]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="113" y="59" width="331" height="20"/>
+				<textElement/>
+				<text><![CDATA[______________________________________________________________]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="107" y="0" width="339" height="35"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remas Al-Ikhlas (2022)]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="655" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="12" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="193" y="12" width="173" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{muzaki_tgl_tambah}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="64" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Nama Muzaki]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="84" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Jumlah Jiwa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="104" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Zakat Beras]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="124" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Zakat Uang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="164" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[NIK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="144" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Shodaqoh]]></text>
+			</staticText>
+			<line>
+				<reportElement x="100" y="83" width="179" height="1"/>
+			</line>
+			<line>
+				<reportElement x="100" y="103" width="179" height="1"/>
+			</line>
+			<line>
+				<reportElement x="100" y="123" width="179" height="1"/>
+			</line>
+			<line>
+				<reportElement x="100" y="183" width="179" height="1"/>
+			</line>
+			<line>
+				<reportElement x="100" y="144" width="256" height="1"/>
+			</line>
+			<line>
+				<reportElement x="100" y="163" width="256" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="100" y="63" width="178" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{muzaki_nama_muzaki}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="84" width="7" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{muzaki_jumlah_jiwa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="104" width="7" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{muzaki_jumlah_zakat_beras}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="110" y="86" width="31" height="19"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jiwa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="104" width="31" height="19"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kg]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="356" y="123" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{muzaki_jumlah_zakat_uang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="356" y="144" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{muzaki_shodaqoh}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="100" y="214" width="356" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="446" y="184" width="11" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="244" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Sub Total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="107" y="263" width="256" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="264" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Dibayarkan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="335" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Kembalian]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="366" y="244" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{muzaki_subTotal}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="101" y="318" width="356" height="1"/>
+			</line>
+			<line>
+				<reportElement x="107" y="283" width="256" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="366" y="264" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{muzaki_pembayaran}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="446" y="298" width="11" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<line>
+				<reportElement x="107" y="354" width="256" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="366" y="335" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{muzaki_kembalian}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="32" width="34" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{muzaki_id_muzaki}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="241" y="32" width="25" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[ID :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="399" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="180" y="400" width="213" height="41"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mengetahui]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="582" width="117" height="56"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ketua Amil Zakat]]></text>
+			</staticText>
+			<image>
+				<reportElement x="12" y="539" width="181" height="76"/>
+				<imageExpression><![CDATA["C:\\Users\\FARHAN\\Downloads\\signature (3).png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="230" y="582" width="113" height="56"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ketua Ta'mir Masjid]]></text>
+			</staticText>
+			<image>
+				<reportElement x="383" y="539" width="172" height="74"/>
+				<imageExpression><![CDATA["C:\\Users\\FARHAN\\Downloads\\signature (2).png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="410" y="582" width="113" height="56"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ketua Remaja Masjid]]></text>
+			</staticText>
+			<image>
+				<reportElement x="206" y="539" width="204" height="70"/>
+				<imageExpression><![CDATA["C:\\Users\\FARHAN\\Downloads\\signature (4).png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="441" width="555" height="41"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ 1) Kwitansi hilang bisa mengambil di Amil Zakat setempat. Syarat (Membawa FC KTP)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="164" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{muzaki_nik}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
